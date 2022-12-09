@@ -18,18 +18,20 @@ function Dashboard() {
   );
 
   useEffect(() => {
+    console.log("Dashboard");
     if (isError) {
-      toast.error(message);
+      console.log(message);
     }
-
+    console.log(user, isError, message);
     if (!user) {
       navigate("/login");
     }
 
     dispatch(getGoal());
+    console.log("Dashboard out");
 
     return () => dispatch(reset());
-  }, [navigate, user, isError, message, dispatch]);
+  }, [user, navigate, dispatch]);
 
   if (isLoading) {
     return <Spinner />;

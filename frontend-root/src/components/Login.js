@@ -22,15 +22,21 @@ function Login() {
   );
 
   useEffect(() => {
+    console.log("login");
     if (isError) {
       toast.error(message);
     }
-
-    if (isSuccess || user) {
+    console.log("isSuccess", isSuccess);
+    console.log("USER", user);
+    if (isSuccess) {
+      console.log("in isSuccess");
       navigate("/");
     }
 
-    dispatch(reset());
+    console.log("login out");
+    return () => {
+      dispatch(reset());
+    };
   }, [user, isError, isSuccess, message, navigate, dispatch]);
 
   const onChange = (e) => {
@@ -47,7 +53,7 @@ function Login() {
 
     dispatch(login(userData));
   };
- 
+
   if (isLoading) {
     return <Spinner />;
   }

@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:8001/api/users/";
+const API_URL = "https://shy-lime-lizard-sock.cyclic.app/api/users/";
 
 //register User
 const register = async (userData) => {
@@ -23,15 +23,17 @@ const login = async (userData) => {
 
   return res.data;
 };
+
 //logout
 const logout = async () => {
-  localStorage.removeItem("user");
+  console.log("logout service");
+  return await localStorage.removeItem("user");
 };
 
 const authService = {
   register,
-  login,
   logout,
+  login,
 };
 
 export default authService;

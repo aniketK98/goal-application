@@ -94,6 +94,7 @@ export const goalSlice = createSlice({
       })
       .addCase(getGoal.rejected, (state, action) => {
         state.isError = true;
+        state.isLoading = false;
         state.message = action.payload;
       })
       .addCase(deleteGoal.pending, (state) => {

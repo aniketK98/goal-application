@@ -14,10 +14,12 @@ function Header() {
   const { user } = useSelector((state) => state.auth);
 
   const onLogout = () => {
+    console.log("clicked");
     dispatch(logout());
     dispatch(reset());
-    navigate("/");
+    navigate("/login");
   };
+
   return (
     <div className="header">
       <Link to="/">
