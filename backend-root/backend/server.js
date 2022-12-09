@@ -6,6 +6,7 @@ import errorHandler from "./middleware/errorMiddleware.js";
 import colors from "colors";
 import connectDB from "./config/db.js";
 import path from "path";
+import cors from "cors";
 
 //app config
 const dotenv = env.config();
@@ -17,6 +18,7 @@ connectDB();
 
 //middlewares
 app.use(express.json());
+app.use(cors());
 app.use(express.urlencoded({ extended: false }));
 app.use("/api/goals", goalRoute);
 app.use("/api/users", userRoute);
