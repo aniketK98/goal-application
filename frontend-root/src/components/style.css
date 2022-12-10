@@ -118,9 +118,14 @@ a {
   color: rgb(113, 113, 113);
 }
 
+.content {
+  max-width: 80%;
+}
+
 .goals {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .goal {
@@ -152,7 +157,8 @@ a {
 .goal > h2 {
   align-items: center;
   display: flex;
-  justify-content: cente;
+  justify-content: center;
+  word-break: break-word;
 }
 
 button {
@@ -186,10 +192,12 @@ button {
   .content {
     width: 80%;
   }
+
   .goals {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: justify;
   }
 
   .goal {
