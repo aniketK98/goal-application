@@ -22,18 +22,12 @@ function Login() {
   );
 
   useEffect(() => {
-    console.log("login");
     if (isError) {
       toast.error(message);
     }
-    console.log("isSuccess", isSuccess);
-    console.log("USER", user);
     if (isSuccess) {
-      console.log("in isSuccess");
       navigate("/");
     }
-
-    console.log("login out");
     return () => {
       dispatch(reset());
     };

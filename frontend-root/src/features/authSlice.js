@@ -51,7 +51,6 @@ export const login = createAsyncThunk("auth/login", async (user, thunkAPI) => {
 
 //logout
 export const logout = createAsyncThunk("auth/logout", async () => {
-  console.log("logout SLice");
   await authService.logout();
 });
 
@@ -61,7 +60,6 @@ const authSlice = createSlice({
   initialState: initialState,
   reducers: {
     reset: (state) => {
-      console.log("reset auth");
       state.isLoading = false;
       state.isError = false;
       state.isSuccess = false;

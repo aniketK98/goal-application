@@ -18,17 +18,14 @@ function Dashboard() {
   );
 
   useEffect(() => {
-    console.log("Dashboard");
     if (isError) {
       console.log(message);
     }
-    console.log(user, isError, message);
     if (!user) {
       navigate("/login");
     }
 
     dispatch(getGoal());
-    console.log("Dashboard out");
 
     return () => dispatch(reset());
   }, [user, navigate, dispatch]);
