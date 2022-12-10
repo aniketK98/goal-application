@@ -28,6 +28,7 @@ a {
   justify-content: center;
   align-items: center;
 }
+
 .form_container > h1 {
   display: flex;
   justify-content: center;
@@ -121,20 +122,6 @@ a {
   display: flex;
   flex-direction: row;
 }
-/*
-.goal {
-  border: 2px solid #000;
-  margin: 10px;
-  padding: 10px;
-  border-radius: 5px;
-  background-color: #a3a3a3;
-} */
-
-/* .goals {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 10px;
-} */
 
 .goal {
   background-color: #f4f4f4;
@@ -176,4 +163,37 @@ button {
   font-weight: 500;
   color: #3d3d3d;
   text-decoration: underline;
+}
+
+@media screen and (max-width: 600px) {
+  .header {
+    padding: 20px 20px;
+  }
+  .header_right > a > h3 {
+    font-weight: 400;
+    padding-right: 10px;
+    padding-left: 5px;
+  }
+
+  .form-group input {
+    width: 300px;
+  }
+
+  .form-group > button {
+    width: 325px;
+  }
+
+  .content {
+    width: 80%;
+  }
+  .goals {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .goal {
+    width: 300px;
+    max-width: 300px;
+  }
 }
